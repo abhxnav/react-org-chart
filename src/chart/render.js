@@ -196,8 +196,9 @@ function render(config) {
   const nodeLink = nodeEnter
     .append('a')
     .attr('class', PERSON_LINK_CLASS)
-    .attr('display', d => (d.person.link ? '' : 'none'))
+    // .attr('display', d => (d.person.link ? '' : 'none'))
     .attr('xlink:href', d => d.person.link)
+    .attr('target', '_blank')
     .on('click', datum => {
       d3.event.stopPropagation()
       // TODO: fire link click handler
