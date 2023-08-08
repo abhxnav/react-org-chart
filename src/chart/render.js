@@ -150,7 +150,7 @@ function render(config) {
     .style('font-size', 12)
     .style('cursor', 'pointer')
     .style('fill', titleColor)
-    .text(d => d.person.department)
+    .text(d => d.person.department.name)
 
   const heightForTitle = 60 // getHeightForText(d.person.title)
 
