@@ -18,7 +18,15 @@ body {
   background-color: #f7f9fa;
 }
 .org-chart-person-name {
+  width: 100% !important;
+  text-align: center!important;
+  white-space: nowrap !important;
   font-weight: 500;
+}
+.org-chart-person-title {
+  width: 100% !important;
+  text-align: center!important;
+  white-space: nowrap !important;
 }
 .org-chart-person-link:hover g {
   fill: #409cf9 !important;

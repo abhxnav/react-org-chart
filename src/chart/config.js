@@ -2,13 +2,13 @@ const animationDuration = 350
 const shouldResize = true
 
 // Nodes
-const nodeWidth = 140
+const nodeWidth = 240
 const nodeHeight = 180
 const nodeSpacing = 12
 const nodePaddingX = 16
 const nodePaddingY = 16
 const avatarWidth = 48
-const nodeBorderRadius = 4
+const nodeBorderRadius = 8
 const margin = {
   top: 20,
   right: 20,

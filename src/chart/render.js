@@ -112,44 +112,47 @@ function render(config) {
   }
 
   const avatarPos = {
-    x: nodeWidth / 2 - avatarWidth / 2,
+    x: nodeWidth / 2 - avatarWidth / 2 + 50,
     y: nodePaddingY / 2,
   }
 
   // Person's Name
   nodeEnter
     .append('text')
-    .attr('class', PERSON_NAME_CLASS + ' unedited')
+    .attr('class', PERSON_NAME_CLASS)
     .attr('x', namePos.x)
-    .attr('y', namePos.y)
+    .attr('y', namePos.y + 20)
     .attr('dy', '.3em')
     .style('cursor', 'pointer')
     .style('fill', nameColor)
     .style('font-size', 14)
+    .style('text-anchor', 'middle')
     .text(d => d.person.name)
   // .on('click', onParentClick(config))
 
   // Person's Title
   nodeEnter
     .append('text')
-    .attr('class', PERSON_TITLE_CLASS + ' unedited')
+    .attr('class', PERSON_TITLE_CLASS)
     .attr('x', nodeWidth / 2)
-    .attr('y', namePos.y + nodePaddingY * 2.4)
+    .attr('y', namePos.y + nodePaddingY * 2.4 + 5)
     .attr('dy', '0.1em')
     .style('font-size', 12)
     .style('cursor', 'pointer')
     .style('fill', titleColor)
+    .style('text-anchor', 'middle')
     .text(d => d.person.title)
     
   nodeEnter
     .append('text')
-    .attr('class', PERSON_TITLE_CLASS + ' unedited')
+    .attr('class', PERSON_TITLE_CLASS)
     .attr('x', nodeWidth / 2)
-    .attr('y', namePos.y + nodePaddingY * 2.4 + 20)
+    .attr('y', namePos.y + nodePaddingY * 2.4 + 25)
     .attr('dy', '0.1em')
     .style('font-size', 12)
     .style('cursor', 'pointer')
     .style('fill', titleColor)
+    .style('text-anchor', 'middle')
     .text(d => d.person.department.name)
 
   const heightForTitle = 60 // getHeightForText(d.person.title)
@@ -158,13 +161,14 @@ function render(config) {
   nodeEnter
     .append('text')
     .attr('class', PERSON_REPORTS_CLASS)
-    .attr('x', nodePaddingX + 2)
-    .attr('y', namePos.y + nodePaddingY + heightForTitle)
+    .attr('x', namePos.x)
+    .attr('y', namePos.y + nodePaddingY + heightForTitle + 5)
     .attr('dy', '.9em')
     .style('font-size', 14)
     .style('font-weight', 400)
     .style('cursor', 'pointer')
     .style('fill', reportsColor)
+    .style('text-anchor', 'middle')
     .text(helpers.getTextForTitle)
 
   // Person's Avatar
@@ -176,6 +180,7 @@ function render(config) {
     .attr('x', avatarPos.x)
     .attr('y', avatarPos.y)
     .attr('stroke', borderColor)
+    .style('text-anchor', 'middle')
     .attr('s', d => {
       d.person.hasImage
         ? d.person.avatar
