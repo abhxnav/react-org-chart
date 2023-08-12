@@ -112,8 +112,8 @@ function render(config) {
   }
 
   const avatarPos = {
-    x: nodeWidth / 2 - avatarWidth / 2 + 50,
-    y: nodePaddingY / 2,
+    x: nodeWidth / 2 - avatarWidth / 2,
+    y: nodePaddingY / 2 + 5,
   }
 
   // Person's Name
@@ -121,7 +121,7 @@ function render(config) {
     .append('text')
     .attr('class', PERSON_NAME_CLASS)
     .attr('x', namePos.x)
-    .attr('y', namePos.y + 20)
+    .attr('y', namePos.y + 5)
     .attr('dy', '.3em')
     .style('cursor', 'pointer')
     .style('fill', nameColor)
@@ -135,7 +135,7 @@ function render(config) {
     .append('text')
     .attr('class', PERSON_TITLE_CLASS)
     .attr('x', nodeWidth / 2)
-    .attr('y', namePos.y + nodePaddingY * 2.4 + 5)
+    .attr('y', namePos.y + nodePaddingY * 2.4 - 10)
     .attr('dy', '0.1em')
     .style('font-size', 12)
     .style('cursor', 'pointer')
@@ -147,7 +147,7 @@ function render(config) {
     .append('text')
     .attr('class', PERSON_TITLE_CLASS)
     .attr('x', nodeWidth / 2)
-    .attr('y', namePos.y + nodePaddingY * 2.4 + 25)
+    .attr('y', namePos.y + nodePaddingY * 2.4 + 10)
     .attr('dy', '0.1em')
     .style('font-size', 12)
     .style('cursor', 'pointer')
@@ -162,7 +162,7 @@ function render(config) {
     .append('text')
     .attr('class', PERSON_REPORTS_CLASS)
     .attr('x', namePos.x)
-    .attr('y', namePos.y + nodePaddingY + heightForTitle + 5)
+    .attr('y', namePos.y + nodePaddingY + heightForTitle - 15)
     .attr('dy', '.9em')
     .style('font-size', 14)
     .style('font-weight', 400)
@@ -193,8 +193,7 @@ function render(config) {
             return d.person.avatar
           })
     })
-    .attr('src', d => d.person.avatar)
-    .attr('href', d => d.person.avatar)
+    .attr('xlink:href', d => d.person.avatar)
     .attr('clip-path', 'url(#avatarClip)')
 
   // Person's Link

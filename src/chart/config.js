@@ -3,7 +3,7 @@ const shouldResize = true
 
 // Nodes
 const nodeWidth = 240
-const nodeHeight = 180
+const nodeHeight = 160
 const nodeSpacing = 12
 const nodePaddingX = 16
 const nodePaddingY = 16
